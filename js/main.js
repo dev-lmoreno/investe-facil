@@ -8,13 +8,19 @@ function showSection(section) {
             setTimeout(() => {
                 content.innerHTML = html;
                 content.style.opacity = 1;
-                content.scrollTop = 0;
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }, 300);
         })
         .catch(() => {
             content.innerHTML = `<p>Erro ao carregar o conteúdo de "${section}".</p>`;
             content.style.opacity = 1;
-            content.scrollTop = 0;
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 }
 
